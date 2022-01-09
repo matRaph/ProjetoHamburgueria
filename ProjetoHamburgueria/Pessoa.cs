@@ -6,23 +6,21 @@ using System.Threading.Tasks;
 
 namespace ProjetoHamburgueria
 {
-    class Pessoa
+    public class Pessoa
     {
         private string nome;
         private int cpf;
         private int idade;
+        private char sexo;
         
-        public Pessoa(string nome, int cpf, int idade)
+        public Pessoa(string nome, int cpf, int idade, char sexo)
         {
             this.nome = nome;
             this.cpf = cpf;
             this.idade = idade;
+            this.sexo = sexo;
         }
 
-        class Funcionario
-        {
-            private int idFuncionario;
-            private float salario;
-        }
     }
+
 }
