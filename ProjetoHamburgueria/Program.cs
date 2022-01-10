@@ -28,7 +28,7 @@ namespace ProjetoHamburgueria
             op = Convert.ToInt32(Console.ReadLine());
                 if(op == 1){
                     int continua = 1;
-                    while (continua != 1)
+                    while (continua != 2)
                     {
                         System.Console.WriteLine("1 - Ver cardápio\n2 - realizar pedido comida\n3 - realizar pedido da bebida\n4 - finalizar pedido\n5 - sair");
                         int op1 = Convert.ToInt32(Console.ReadLine());
@@ -148,6 +148,7 @@ namespace ProjetoHamburgueria
                 {
                     int continua = 1;
                     while (continua != 2)
+                    {
                     //listar pedidos , criar/editar cardapio, remove 
                     Console.WriteLine("1 - Cadastrar cozinheiro \n2 - Listar pedidos\n3 - finalizar pedido \n4 - Editar cardápio\n5 - sair");
                     int op3 = Convert.ToInt32(Console.ReadLine());
@@ -191,6 +192,7 @@ namespace ProjetoHamburgueria
                         case 5 :
                             continua = 2;
                             break;
+                    }
                     }
                 }
                     
