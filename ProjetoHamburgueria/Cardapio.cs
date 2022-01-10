@@ -16,13 +16,13 @@ namespace ProjetoHamburgueria
             Console.WriteLine("Comidas:");
             for (int c = 0; c < Comidas.Length ; c++)
             {
-                Console.WriteLine((c + 1) + "-" + Comidas[c]);
+                System.Console.WriteLine((c + 1) + "-" + Comidas[c]);
             }
 
-            Console.WriteLine("Bebidas:");
+            System.Console.WriteLine("Bebidas:");
             for (int c = 0; c < Bebidas.Length; c++)
             {
-                Console.WriteLine((c + 1) + "-" + Bebidas[c]);
+                System.Console.WriteLine((c + 1) + "-" + Bebidas[c]);
             }
         }
     }
