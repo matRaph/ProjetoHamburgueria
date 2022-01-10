@@ -11,8 +11,8 @@ namespace ProjetoHamburgueria
             private int idPedido;
             private Boolean status;
             private string nomeCliente;
-            private List<int> pedidoComida;
-            private List<int> pedidoBebida;
+            public List<int> pedidoComida = new List<int>();
+            public List<int> pedidoBebida = new List<int>();
 
     public Pedido(string nomeCliente, int idPedido) {
             this.nomeCliente = nomeCliente;
@@ -25,8 +25,7 @@ namespace ProjetoHamburgueria
         }
 
         public int idpedido{
-            get => _name;
-            set => _name = value;
+            get;set;
 
         }
     

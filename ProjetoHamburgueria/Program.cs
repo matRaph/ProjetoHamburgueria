@@ -21,11 +21,11 @@ namespace ProjetoHamburgueria
             Cardapio cardapio = new Cardapio();
             Cliente cliente = new Cliente("Tonhão", "123.456.789-12", 24, 'M');
             int idpedidos = 1;
-
-            System.Console.WriteLine("1 - cliente\n2 - atendente\n3 - cozinheiro\n4 - finalizar");
-            int op = Convert.ToInt32(Console.ReadLine());
+            int op = 0;
             while(op != 4)
             {
+            System.Console.WriteLine("1 - cliente\n2 - atendente\n3 - cozinheiro\n4 - finalizar");
+            op = Convert.ToInt32(Console.ReadLine());
                 if(op == 1){
                     int continua = 1;
                     while (continua == 1)
@@ -35,7 +35,7 @@ namespace ProjetoHamburgueria
                         switch(op1)
                         {
                             case 1:
-                                cliente.VerCardapio();
+                                cliente.VerCardapio(cardapio);
                                 
                                 System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());
@@ -70,9 +70,10 @@ namespace ProjetoHamburgueria
                                 continua = Convert.ToInt32(Console.ReadLine());
                                 break;
                             case 4:
-                                cliente.pedido.idpedido();
+                                cliente.pedido.idpedido = idpedidos++;
                                 idpedidos++;
-                                cliente.terminarPedido(atendente.receberPedido(cliente.pedido()));
+                                cliente.terminarPedido( atendentes[0]);
+                                //cliente.terminarPedido(atendentes[0].receberPedido(cliente.pedido));
 
                                 System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());
@@ -120,14 +121,14 @@ namespace ProjetoHamburgueria
                                 break;
 
                             case 2:
-                                atendente.ListarPedidos(atendente.pedidos);
+                                atendentes[0].ListarPedidos(atendentes[0].pedidos);
 
                                 System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());                
                                 break;
 
                             case 3:
-                                atendente.enviarPedido(cozinheiro);
+                                atendentes[0].enviarPedido(cozinheiros[0]);
                                 System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());
                                 break;
@@ -146,7 +147,7 @@ namespace ProjetoHamburgueria
                 else if (op == 3)
                 {
                     int continua = 1;
-                    while (continua == 1)
+                    while (continua != 2)
                     //listar pedidos , criar/editar cardapio, remove 
                     Console.WriteLine("1 - Cadastrar cozinheiro \n2 - Listar pedidos\n3 - finalizar pedido \n4 - Editar cardápio\n5 - sair");
                     int op3 = Convert.ToInt32(Console.ReadLine());
@@ -164,17 +165,17 @@ namespace ProjetoHamburgueria
                                 int idade = Convert.ToInt32(Console.ReadLine());
                                 char sexo = Convert.ToChar(Console.ReadLine());
                                 cozinheiro = new Cozinheiro(id, salario, nome, cpf, idade, sexo);
-                                atendentes.Add(atendente);
+                                cozinheiros.Add(cozinheiro);
                                 System.Console.WriteLine("Cadastrar outro(a) atendente?\n 1 - sim\n2 - não");
                                 pass = Convert.ToInt32(Console.ReadLine());
                             }
                             break;
                         case 2:
-                            cozinheiro.ListarPedidos(cozinheiro.pedidos);
+                            cozinheiros[0].ListarPedidos(cozinheiros[0].pedidos);
                             break;
                         case 3:
                             int pedidoF = Convert.ToInt32(Console.ReadLine());
-                            cozinheiro.finalizarPedidoX(pedidoF);
+                            cozinheiros[0].finalizarPedidoX(pedidoF);
                             break;
                         case 4:
                             while(continua == 1)

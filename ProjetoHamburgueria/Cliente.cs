@@ -40,12 +40,7 @@ namespace ProjetoHamburgueria
             set { nome = sexo; }
 
         }
-        public Pedido pedido
-        {
-            get { return pedido; }
-            set { pedido = pedido; }
 
-        }
 
         // essa relação AQUI!
         public void RealizarPedidoComida(int codigo_pedido)

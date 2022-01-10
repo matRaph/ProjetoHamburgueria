@@ -20,7 +20,12 @@ namespace ProjetoHamburgueria
         public void ListarPedidos(List<Pedido> pedidos){
         for (int c = 0; c < pedidos.Count; c++)
             {
-                System.Console.WriteLine((c + 1) + "-" + pedidos[c]);
+                 for (int a = 0; a < pedidos[c].pedidoBebida.Count; a++){
+                     System.Console.WriteLine((c + 1) + "-" + (pedidos[c].pedidoBebida[a]+1));
+                 }
+                 for (int b = 0; b < pedidos[c].pedidoComida.Count; b++){
+                     System.Console.WriteLine((c + 1) + "-" +( pedidos[c].pedidoComida[b] + 1));
+                 }
             }
 
         }
