@@ -9,11 +9,11 @@ namespace ProjetoHamburgueria
     public abstract class Pessoa
     {
         private string nome;
-        private int cpf;
+        private string cpf;
         private int idade;
         private char sexo;
 
-        public Pessoa(string nome, int cpf, int idade, char sexo)
+        public Pessoa(string nome, string cpf, int idade, char sexo)
         {
             this.nome = nome;
             this.cpf = cpf;

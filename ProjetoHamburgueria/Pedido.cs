@@ -24,9 +24,9 @@ namespace ProjetoHamburgueria
         {
         }
 
-        public string idpedido{
-             get { return idpedido; }
-             set { idpedido = value; }
+        public int idpedido{
+            get => _name;
+            set => _name = value;
 
         }
     

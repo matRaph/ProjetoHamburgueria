@@ -8,8 +8,8 @@ namespace ProjetoHamburgueria
 {
     class Cliente : Pessoa
     {
-        Pedido pedido = new Pedido();
-        public Cliente(string nome, int cpf, int idade, char sexo) : base(nome, cpf, idade, sexo)
+        public Pedido pedido = new Pedido();
+        public Cliente(string nome, string cpf, int idade, char sexo) : base(nome, cpf, idade, sexo)
         {
 
         }
@@ -40,6 +40,12 @@ namespace ProjetoHamburgueria
             set { nome = sexo; }
 
         }
+        public Pedido pedido
+        {
+            get { return pedido; }
+            set { pedido = pedido; }
+
+        }
 
         // essa relação AQUI!
         public void RealizarPedidoComida(int codigo_pedido)
@@ -61,7 +67,7 @@ namespace ProjetoHamburgueria
             atendente.receberPedido(pedido);
 
         }
-        // AVALIAR SE VAMOS QUERER LIDAR COM DINHEIRO (PODEMOS SER CARIDOSOS E DAR COMIDA DE GRAÇA)
+        // AVALIAR SE VAMOS QUERER LIDAR COM DINHEIRO AGORA (PODEMOS SER CARIDOSOS E DAR COMIDA DE GRAÇA)
         public float EfetuarPagamento(int forma_pagamento, float valor)
         {
             // " selecione forma de pagamento:\n 1 - cartão de credito\n 2 - cartão de debito\n 3 - dinheiro"

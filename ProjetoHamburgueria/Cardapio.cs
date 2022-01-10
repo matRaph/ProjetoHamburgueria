@@ -63,13 +63,11 @@ namespace ProjetoHamburgueria
                     System.Console.WriteLine("Escreva o item:");
                     Comidas[opcaoComid - 1] = System.Console.ReadLine();
                     System.Console.WriteLine("Item alterado com sucesso.");
-                    editarCardapio();
                 }
                 else if(opcaoAcao == 2)
                 {
                     Comidas.RemoveAt(opcaoComid); 
                     System.Console.WriteLine("Item removido com sucesso.");
-                    editarCardapio();
                 }
             }
             
@@ -90,14 +88,12 @@ namespace ProjetoHamburgueria
                     System.Console.WriteLine("Escreva o item:");
                     Bebidas[opcaoBebid - 1] = System.Console.ReadLine();
                     System.Console.WriteLine("Item alterado com sucesso.");
-                    editarCardapio();
                 }
                 // isso um metodo remove 
                 else if (opcaoAcao == 2)
                 {
                     Bebidas.RemoveAt(opcaoBebid);  
-                    System.Console.WriteLine("Item removido com sucesso");
-                    editarCardapio();
+                    System.Console.WriteLine("Item removido com sucesso");                   
                 }
 
             }
@@ -105,19 +101,20 @@ namespace ProjetoHamburgueria
             if (opcaoCard == 3)
             {
                 string adicioCom;
-                System.Console.WriteLine("Digite o novo item?");
+                System.Console.WriteLine("Digite o novo item");
                 adicioCom = System.Console.ReadLine();
                 Comidas.Add(adicioCom);
-                
+                System.Console.WriteLine("Novo item adicionado");
             }
 
             if (opcaoCard == 4)
             {
                 string adicioBeb;
-                System.Console.WriteLine("Digite o novo item?");
+                System.Console.WriteLine("Digite o novo item");
                 adicioBeb = System.Console.ReadLine();
                 Bebidas.Add(adicioBeb);
-                
+                System.Console.WriteLine("Novo item adicionado");
+
             }
         }
     }

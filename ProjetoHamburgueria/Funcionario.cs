@@ -8,11 +8,10 @@ namespace ProjetoHamburgueria
 {
     class Funcionario : Pessoa
     {
-        
         private int idFuncionario;
-        private float salario;
+        private double salario;
 
-        public Funcionario(int idFuncionario, float salario, string nome, int cpf, int idade, char sexo) : base(nome, cpf, idade, sexo)
+        public Funcionario(int idFuncionario, double salario, string nome, string cpf, int idade, char sexo) : base(nome, cpf, idade, sexo)
         {
             this.idFuncionario = idFuncionario;
             this.salario = salario;
@@ -25,9 +24,6 @@ namespace ProjetoHamburgueria
             }
 
         }
-
-
-
 
     }
 }
