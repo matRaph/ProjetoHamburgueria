@@ -8,12 +8,8 @@ namespace ProjetoHamburgueria
 {
     class Cozinheiro : Funcionario
     {
-        List<Pedido> pedidos ;
+        public List<Pedido> pedidos;
         public Cozinheiro(int idFuncionario, double salario, string nome, string cpf, int idade, char sexo) : base(idFuncionario, salario, nome, cpf, idade, sexo)
-        {
-
-        }
-        public Cozinheiro()
         {
 
         }
@@ -25,11 +21,11 @@ namespace ProjetoHamburgueria
     //metodo que muda com base no seu id infomado o status do pedido e apaga os itens nele
         public void finalizarPedidoX(int idPedido ){
             for(int c = 0; c < pedidos.Count; c++){
-                    if(pedidos[c].idPedido == idPedido){
+                    if(pedidos[c].idpedido == idPedido){
                         pedidos[c].finalizarPedido();
                     }
                     else{
-                    System.Console.WriteLine("id do pedido não encontrado");
+                    System.Console.WriteLine("id do pedido nï¿½o encontrado");
 
                     }
 
