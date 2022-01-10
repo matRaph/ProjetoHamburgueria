@@ -92,7 +92,7 @@ namespace ProjetoHamburgueria
                 else if (op == 2)
                 {
                 int continua = 1;
-                while (continua == 1)
+                while (continua != 2)
                     {
                         //listar pedidos , criar/editar cardapio, remove 
                         Console.WriteLine("1 - Cadastrar atendente \n2 - Listar pedidos\n3 - Enviar pedidos \n4 - Editar cardápio\n5 - sair ");
@@ -178,7 +178,7 @@ namespace ProjetoHamburgueria
                             cozinheiros[0].finalizarPedidoX(pedidoF);
                             break;
                         case 4:
-                            while(continua == 1)
+                            while(continua != 2)
                             {
                                 pass = 1;
                                 cardapio.editarCardapio();
