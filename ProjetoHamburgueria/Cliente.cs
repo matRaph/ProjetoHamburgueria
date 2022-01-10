@@ -13,13 +13,7 @@ namespace ProjetoHamburgueria
 
         }
 
-        public void ExibirCardapio(string[] cardapio)
-        {
-            for (int c = 0; c < cardapio.Length; c++)
-            {
-                Console.WriteLine( (c+1) + "-" + cardapio[c]);
-            }
-        }
+        
 
         public void RealizarPedido(){
 
