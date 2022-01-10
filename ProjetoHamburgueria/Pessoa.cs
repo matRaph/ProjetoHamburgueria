@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoHamburgueria
 {
-    public class Pessoa
+    public abstract class Pessoa
     {
         private string nome;
         private int cpf;

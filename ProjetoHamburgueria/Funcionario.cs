@@ -8,6 +8,7 @@ namespace ProjetoHamburgueria
 {
     class Funcionario : Pessoa
     {
+        
         private int idFuncionario;
         private float salario;
 
@@ -16,5 +17,17 @@ namespace ProjetoHamburgueria
             this.idFuncionario = idFuncionario;
             this.salario = salario;
         }
+
+        public void ListarPedidos(List<Pedido> pedidos){
+        for (int c = 0; c < pedidos.Count; c++)
+            {
+                System.Console.WriteLine((c + 1) + "-" + pedidos[c]);
+            }
+
+        }
+
+
+
+
     }
 }

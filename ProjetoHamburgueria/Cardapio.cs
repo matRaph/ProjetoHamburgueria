@@ -8,20 +8,20 @@ namespace ProjetoHamburgueria
 {
     public class Cardapio
     {
-        string[] Comidas = {"Hamb1", "Hamb2", "Hamb3", "Hamb4" };
-        string[] Bebidas = { "Bebida1", "Bebida2", "Bebida3", "Bebida4" };
+        List<string> Comidas = new List<string>();
+        List<string> Bebidas =  new List<string>();
 
         public void exibirCardapio()
         {
            
             System.Console.WriteLine("Comidas:");
-            for (int c = 0; c < Comidas.Length ; c++)
+            for (int c = 0; c < Comidas.Count ; c++)
             {
                 System.Console.WriteLine((c + 1) + "-" + Comidas[c]);
             }
             System.Console.WriteLine("");
             System.Console.WriteLine("Bebidas:");
-            for (int c = 0; c < Bebidas.Length; c++)
+            for (int c = 0; c < Bebidas.Count; c++)
             {
                 System.Console.WriteLine((c + 1) + "-" + Bebidas[c]);
             }
@@ -29,6 +29,11 @@ namespace ProjetoHamburgueria
         }
         public void editarCardapio()
         {
+            //algumas dessas verificações das opções deve ser feito no MainClass 
+            //isso aqui é mais ou menos a parte do main sobre o cardapio
+            //pode tomar como exemplo o efetuar pagamento da classe cliente e a 
+            // relação do cliente com o pedido
+
             int opcaoCard;
            
             void mostrarOpcoes()
@@ -42,11 +47,11 @@ namespace ProjetoHamburgueria
             opcaoCard = Convert.ToInt32(System.Console.ReadLine());
 
             if (opcaoCard == 1)
-            {
+            {   //essas edições podem ser dois metodos separados
                 int opcaoAcao;
                 int opcaoComid;
                 System.Console.WriteLine("Digite o número da comida que deseja editar:");
-                for (int c = 0; c < Comidas.Length; c++)
+                for (int c = 0; c < Comidas.Count; c++)
                 {
                     System.Console.WriteLine((c + 1) + "-" + Comidas[c]);
                 }
@@ -62,17 +67,18 @@ namespace ProjetoHamburgueria
                 }
                 else if(opcaoAcao == 2)
                 {
-                    Comidas.ToList().RemoveAt(opcaoComid); //Remover item de indice opcaoComid em array Comidas
+                    Comidas.RemoveAt(opcaoComid); 
                     System.Console.WriteLine("Item removido com sucesso.");
                     editarCardapio();
                 }
             }
+            
             if (opcaoCard == 2)
             {
                 int opcaoAcao;
                 int opcaoBebid;
                 System.Console.WriteLine("Digite o número da bebida que deseja editar:");
-                for (int c = 0; c < Bebidas.Length; c++)
+                for (int c = 0; c < Bebidas.Count; c++)
                 {
                     System.Console.WriteLine((c + 1) + "-" + Bebidas[c]);
                 }
@@ -86,20 +92,23 @@ namespace ProjetoHamburgueria
                     System.Console.WriteLine("Item alterado com sucesso.");
                     editarCardapio();
                 }
+                // isso um metodo remove 
                 else if (opcaoAcao == 2)
                 {
-                    Bebidas.ToList().RemoveAt(opcaoBebid);  //Remover item de indice opcaoBebid em array Bebidas
+                    Bebidas.RemoveAt(opcaoBebid);  
                     System.Console.WriteLine("Item removido com sucesso");
                     editarCardapio();
                 }
 
             }
+            //poderia ser dois metodos add e chama-los la no MainClass
             if (opcaoCard == 3)
             {
                 string adicioCom;
                 System.Console.WriteLine("Digite o novo item?");
                 adicioCom = System.Console.ReadLine();
-                //Adicionar item string adicioCom em array Comidas
+                Comidas.Add(adicioCom);
+                
             }
 
             if (opcaoCard == 4)
@@ -107,7 +116,8 @@ namespace ProjetoHamburgueria
                 string adicioBeb;
                 System.Console.WriteLine("Digite o novo item?");
                 adicioBeb = System.Console.ReadLine();
-                //Adicionar item string adicioBeb em array Bebidas
+                Bebidas.Add(adicioBeb);
+                
             }
         }
     }
