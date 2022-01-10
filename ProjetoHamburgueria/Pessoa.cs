@@ -12,7 +12,7 @@ namespace ProjetoHamburgueria
         private int cpf;
         private int idade;
         private char sexo;
-        
+
         public Pessoa(string nome, int cpf, int idade, char sexo)
         {
             this.nome = nome;
