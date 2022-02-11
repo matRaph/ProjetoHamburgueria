@@ -50,8 +50,10 @@ namespace ProjetoHamburgueria
         this.status = false;
     }
 
-
-
+        public override string ToString()
+        {
+            return "Pedido: "+ idPedido + " de " + nomeCliente;
+        }
 
     }
 

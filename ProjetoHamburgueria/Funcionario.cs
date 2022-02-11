@@ -30,5 +30,10 @@ namespace ProjetoHamburgueria
 
         }
 
+        public override string ToString()
+        {
+            return "ID: "+ idFuncionario + ", Nome: "+ nome;
+        }
+
     }
 }
