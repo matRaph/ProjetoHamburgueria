@@ -17,17 +17,23 @@ namespace ProjetoHamburgueria
             this.salario = salario;
         }
 
-        public void ListarPedidos(List<Pedido> pedidos){
-        for (int c = 0; c < pedidos.Count; c++)
-            {
-                 for (int a = 0; a < pedidos[c].pedidoBebida.Count; a++){
-                     System.Console.WriteLine((c + 1) + "-" + (pedidos[c].pedidoBebida[a]+1));
-                 }
-                 for (int b = 0; b < pedidos[c].pedidoComida.Count; b++){
-                     System.Console.WriteLine((c + 1) + "-" +( pedidos[c].pedidoComida[b] + 1));
-                 }
-            }
+        public void ListarPedidos(List<Pedido> pedidos, List<string> comidas, List<string> bebidas)
+        {
 
+            for (int c = 0; c < pedidos.Count; c++)
+            {
+                Console.WriteLine("Pedido " + (c + 1));
+                Console.WriteLine("Comidas:\n");
+                for (int a = 0; a < pedidos[c].pedidoComida.Count; a++)
+                {
+                    System.Console.WriteLine((a + 1) + "-" + (comidas[pedidos[c].pedidoComida[a]]));
+                }
+                Console.WriteLine("Bebidas:\n");
+                for (int b = 0; b < pedidos[c].pedidoBebida.Count; b++)
+                {
+                    System.Console.WriteLine((b + 1) + "-" + (bebidas[pedidos[c].pedidoBebida[b]]));
+                }
+            }
         }
 
         public override string ToString()

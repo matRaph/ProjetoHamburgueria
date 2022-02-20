@@ -11,6 +11,7 @@ namespace ProjetoHamburgueria
     {
 
         public List<Pedido> pedidos = new List<Pedido>();
+        
         public Atendente(int idFuncionario, double salario, string nome, string cpf, int idade, char sexo) 
         : base(idFuncionario, salario, nome, cpf, idade, sexo)
         {

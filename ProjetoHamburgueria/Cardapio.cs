@@ -8,8 +8,8 @@ namespace ProjetoHamburgueria
 {
     public class Cardapio
     {
-        List<string> Comidas = new List<string>();
-        List<string> Bebidas =  new List<string>();
+        public List<string> Comidas = new List<string>();
+        public List<string> Bebidas =  new List<string>();
 
         public void exibirCardapio()
         {

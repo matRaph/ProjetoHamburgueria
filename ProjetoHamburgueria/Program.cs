@@ -121,20 +121,20 @@ namespace ProjetoHamburgueria
                                 break;
 
                             case 2:
-                                atendentes[0].ListarPedidos(atendentes[0].pedidos);
+                                atendentes[0].ListarPedidos(atendentes[0].pedidos, cardapio.Comidas, cardapio.Bebidas);
 
-                                System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
+                                System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n 2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());                
                                 break;
 
                             case 3:
                                 atendentes[0].enviarPedido(cozinheiros[0]);
-                                System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
+                                System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n 2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());
                                 break;
                             case 4:
                                 cardapio.editarCardapio();
-                                System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n2 - não");
+                                System.Console.WriteLine("realizar outra operação ?\n 1 - sim\n 2 - não");
                                 continua = Convert.ToInt32(Console.ReadLine());
                                 break;
                             case 5:
@@ -172,7 +172,7 @@ namespace ProjetoHamburgueria
                             }
                             break;
                         case 2:
-                            cozinheiros[0].ListarPedidos(cozinheiros[0].pedidos);
+                            cozinheiros[0].ListarPedidos(cozinheiros[0].pedidos, cardapio.Comidas, cardapio.Bebidas);
                             break;
                         case 3:
                             int pedidoF = Convert.ToInt32(Console.ReadLine());
