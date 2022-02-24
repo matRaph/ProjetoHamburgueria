@@ -14,16 +14,17 @@ namespace ProjetoHamburgueria
             List<Cozinheiro> cozinheiros = new List<Cozinheiro>();
             List<Cardapio> cardapios = new List<Cardapio>();
 
-
+            
             //A Hamburgueria
             Atendente atendente;
             Cozinheiro cozinheiro ;
             Cardapio cardapio = new Cardapio();
             Cliente cliente = new Cliente("Tonhão", "123.456.789-12", 24, 'M');
             Atendente a =  new Atendente(2, 22, "breno", "123", 13, 'm');
-            atendentes.Append(a);
+            atendentes[0] = a;
             Atendente b =  new Atendente(1, 22, "arthur", "321", 13, 'm');
-            atendentes.Append(b);
+            atendentes[1] = b;
+            int adat = 1;
             int idpedidos = 1;
             int op = 0;
             while(op != 4)
@@ -116,7 +117,8 @@ namespace ProjetoHamburgueria
                                     int idade = Convert.ToInt32(Console.ReadLine());
                                     char sexo = Convert.ToChar(Console.ReadLine());
                                     atendente = new Atendente(id, salario, nome, cpf, idade, sexo);
-                                    atendentes.Append(atendente);
+                                    adat ++;
+                                    atendentes[adat] = atendente;
                                     System.Console.WriteLine("Cadastrar outro(a) atendente?\n 1 - sim\n2 - não");
                                     pass = Convert.ToInt32(Console.ReadLine());
                                 }
@@ -143,7 +145,7 @@ namespace ProjetoHamburgueria
                                 break;
                             case 5:
                                 Array.Sort(atendentes);
-                                foreach(Atendente i in atendentes) Console.WriteLine(i);
+                                foreach(Atendente i in atendentes) Console.WriteLine(i.ToString());
 
                                 break;
                             case 6:
