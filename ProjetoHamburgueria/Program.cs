@@ -10,7 +10,7 @@ namespace ProjetoHamburgueria
     {
         static void Main(string[] args)
         {
-            Atendente[]atendentes = new Atendente[10] ;
+            List<Atendente> atendentes = new List<Atendente>() ;
             List<Cozinheiro> cozinheiros = new List<Cozinheiro>();
             List<Cardapio> cardapios = new List<Cardapio>();
 
@@ -20,10 +20,10 @@ namespace ProjetoHamburgueria
             Cozinheiro cozinheiro ;
             Cardapio cardapio = new Cardapio();
             Cliente cliente = new Cliente("Tonhão", "123.456.789-12", 24, 'M');
-            Atendente a =  new Atendente(2, 22, "breno", "123", 13, 'm');
-            atendentes[0] = a;
+            Atendente a = new Atendente(2, 22, "breno", "123", 13, 'm');
+            atendentes.Add(a);
             Atendente b =  new Atendente(1, 22, "arthur", "321", 13, 'm');
-            atendentes[1] = b;
+            atendentes.Add(b);
             int adat = 1;
             int idpedidos = 1;
             int op = 0;
@@ -144,9 +144,9 @@ namespace ProjetoHamburgueria
                                 continua = Convert.ToInt32(Console.ReadLine());
                                 break;
                             case 5:
-                                Array.Sort(atendentes);
-                                foreach(Atendente i in atendentes) Console.WriteLine(i.ToString());
-
+                                Atendente[] newAtendentes = atendentes.ToArray();
+                                Array.Sort(newAtendentes);
+                                foreach(Atendente i in newAtendentes) Console.WriteLine(i.ToString());
                                 break;
                             case 6:
                                 continua = 2;
