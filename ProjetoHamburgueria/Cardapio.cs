@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoHamburgueria
 {
-    public class Cardapio
+    public class Cardapio 
     {
         public List<string> Comidas = new List<string>();
         public List<string> Bebidas =  new List<string>();
@@ -27,6 +27,7 @@ namespace ProjetoHamburgueria
             }
             
         }
+        
         public void editarCardapio()
         {
             //algumas dessas verificações das opções deve ser feito no MainClass 

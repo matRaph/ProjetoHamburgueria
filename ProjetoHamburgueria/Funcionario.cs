@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjetoHamburgueria
 {
-    class Funcionario : Pessoa
+    class Funcionario : Pessoa , IComparable
     {
-        private int idFuncionario;
+        public int idFuncionario;
         private double salario;
 
         public Funcionario(int idFuncionario, double salario, string nome, string cpf, int idade, char sexo) : base(nome, cpf, idade, sexo)
@@ -35,6 +35,16 @@ namespace ProjetoHamburgueria
                 }
             }
         }
+        public int CompareTo(object obj)
+        {
+            Funcionario a = this;
+            Funcionario b = (Funcionario) obj;
+            if (a.nome == b.nome) return 0;
+            if(a.nome.CompareTo(b.nome) == -1) return -1;
+            if(a.nome.CompareTo(b.nome) == 1) return 1;
+            return 0 ;
+        }
+
 
         public override string ToString()
         {

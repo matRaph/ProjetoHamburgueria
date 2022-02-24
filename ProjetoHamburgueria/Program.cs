@@ -10,7 +10,7 @@ namespace ProjetoHamburgueria
     {
         static void Main(string[] args)
         {
-            List<Atendente> atendentes = new List<Atendente>();
+            Atendente[]atendentes = new Atendente[10] ;
             List<Cozinheiro> cozinheiros = new List<Cozinheiro>();
             List<Cardapio> cardapios = new List<Cardapio>();
 
@@ -20,6 +20,10 @@ namespace ProjetoHamburgueria
             Cozinheiro cozinheiro ;
             Cardapio cardapio = new Cardapio();
             Cliente cliente = new Cliente("Tonhão", "123.456.789-12", 24, 'M');
+            Atendente a =  new Atendente(2, 22, "breno", "123", 13, 'm');
+            atendentes.Append(a);
+            Atendente b =  new Atendente(1, 22, "arthur", "321", 13, 'm');
+            atendentes.Append(b);
             int idpedidos = 1;
             int op = 0;
             while(op != 4)
@@ -95,7 +99,7 @@ namespace ProjetoHamburgueria
                 while (continua != 2)
                     {
                         //listar pedidos , criar/editar cardapio, remove 
-                        Console.WriteLine("1 - Cadastrar atendente \n2 - Listar pedidos\n3 - Enviar pedidos \n4 - Editar cardápio\n5 - sair ");
+                        Console.WriteLine("1 - Cadastrar atendente \n2 - Listar pedidos\n3 - Enviar pedidos \n4 - Editar cardápio\n5 - ordenar e listar atendentes\n6 - sair ");
                         int op2 = Convert.ToInt32(Console.ReadLine());
                         
                         switch (op2)
@@ -112,7 +116,7 @@ namespace ProjetoHamburgueria
                                     int idade = Convert.ToInt32(Console.ReadLine());
                                     char sexo = Convert.ToChar(Console.ReadLine());
                                     atendente = new Atendente(id, salario, nome, cpf, idade, sexo);
-                                    atendentes.Add(atendente);
+                                    atendentes.Append(atendente);
                                     System.Console.WriteLine("Cadastrar outro(a) atendente?\n 1 - sim\n2 - não");
                                     pass = Convert.ToInt32(Console.ReadLine());
                                 }
@@ -138,6 +142,11 @@ namespace ProjetoHamburgueria
                                 continua = Convert.ToInt32(Console.ReadLine());
                                 break;
                             case 5:
+                                Array.Sort(atendentes);
+                                foreach(Atendente i in atendentes) Console.WriteLine(i);
+
+                                break;
+                            case 6:
                                 continua = 2;
                                 break;
                         }
