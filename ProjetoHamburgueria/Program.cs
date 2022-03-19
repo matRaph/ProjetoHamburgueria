@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Json;
+using System.IO;
 
 namespace ProjetoHamburgueria
 {
     class Program
     {
         static void Main(string[] args)
-        {
+    {
             List<Atendente> atendentes = new List<Atendente>() ;
             List<Cozinheiro> cozinheiros = new List<Cozinheiro>();
             List<Cardapio> cardapios = new List<Cardapio>();
@@ -20,11 +23,7 @@ namespace ProjetoHamburgueria
             Cozinheiro cozinheiro ;
             Cardapio cardapio = new Cardapio();
             Cliente cliente = new Cliente("Tonhão", "123.456.789-12", 24, 'M');
-            Atendente a = new Atendente(2, 22, "breno", "123", 13, 'm');
-            atendentes.Add(a);
-            Atendente b =  new Atendente(1, 22, "arthur", "321", 13, 'm');
-            atendentes.Add(b);
-            int adat = 1;
+            int adat = -1;
             int idpedidos = 1;
             int op = 0;
             while(op != 4)
@@ -117,8 +116,12 @@ namespace ProjetoHamburgueria
                                     int idade = Convert.ToInt32(Console.ReadLine());
                                     char sexo = Convert.ToChar(Console.ReadLine());
                                     atendente = new Atendente(id, salario, nome, cpf, idade, sexo);
+                                    atendentes.Add(null);
                                     adat ++;
                                     atendentes[adat] = atendente;
+                                    //Arquivo
+                                    atendente.atendente_toJson(atendentes);
+
                                     System.Console.WriteLine("Cadastrar outro(a) atendente?\n 1 - sim\n2 - não");
                                     pass = Convert.ToInt32(Console.ReadLine());
                                 }
@@ -178,6 +181,9 @@ namespace ProjetoHamburgueria
                                 char sexo = Convert.ToChar(Console.ReadLine());
                                 cozinheiro = new Cozinheiro(id, salario, nome, cpf, idade, sexo);
                                 cozinheiros.Add(cozinheiro);
+                                //Arquivo
+                                cozinheiro.cozinheiro_toJson(cozinheiros);
+
                                 System.Console.WriteLine("Cadastrar outro(a) atendente?\n 1 - sim\n2 - não");
                                 pass = Convert.ToInt32(Console.ReadLine());
                             }
@@ -207,10 +213,6 @@ namespace ProjetoHamburgueria
                     }
                 }
                     
-
-
-
-
             }
             
         }

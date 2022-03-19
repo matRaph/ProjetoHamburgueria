@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ProjetoHamburgueria
 {
@@ -30,8 +32,11 @@ namespace ProjetoHamburgueria
                     }
 
             }
-            
-
+        }
+        public void cozinheiro_toJson(List<Cozinheiro> lista)
+        {
+            string s = JsonSerializer.Serialize<List<Cozinheiro>>(lista);
+            File.WriteAllText("Cozinheiros.json", s);
         }
     }
 
