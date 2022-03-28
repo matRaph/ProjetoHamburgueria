@@ -55,7 +55,7 @@ namespace ProjetoHamburgueria
         // edição do cardapio 
         public void VerCardapio(Cardapio cardapio)
         {
-            cardapio.exibirCardapio();
+            cardapio.ListarCardapio();
         }
 
         public void terminarPedido(Atendente atendente){
